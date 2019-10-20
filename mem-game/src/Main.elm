@@ -34,7 +34,7 @@ type alias Card =
     }
 
 imageList : List Image
-imageList = List.map (\n -> {url = "./assets/cat" ++ String.fromInt n ++ ".jpeg"}) [0,0,1,1,2,2,3,3,4,4]
+imageList = List.map (\n -> {url = "./assets/nasa" ++ String.fromInt n ++ ".jpeg"}) [0,0,1,1,2,2,3,3,4,4]
 
 unshuffledBoard : Board
 unshuffledBoard = List.map (\img -> { image = img, selected = False, completed = False }) imageList
