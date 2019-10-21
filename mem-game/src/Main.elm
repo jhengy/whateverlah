@@ -34,7 +34,7 @@ type alias Card =
     }
 
 imageList : List Image
-imageList = List.map (\n -> {url = "./assets/nasa" ++ String.fromInt n ++ ".jpeg"}) [0,0,1,1,2,2,3,3,4,4]
+imageList = List.map (\n -> {url = "./assets/nasa" ++ String.fromInt n ++ ".jpg"}) [1,1,2,2,3,3,4,4]
 
 unshuffledBoard : Board
 unshuffledBoard = List.map (\img -> { image = img, selected = False, completed = False }) imageList
@@ -110,8 +110,8 @@ displayCard {image, selected, completed} =
 view { board } =
     let 
       divs = List.indexedMap (\index card -> td [onClick (Click index)] [displayCard card]) board
-      topHalf = tr [] (List.take 5 divs)
-      bottomHalf = tr [] (List.drop 5 divs)
+      topHalf = tr [] (List.take 4 divs)
+      bottomHalf = tr [] (List.drop 4 divs)
     in
       table [] [topHalf, bottomHalf]
 
